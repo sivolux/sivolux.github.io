@@ -232,29 +232,54 @@ button {
   inset: -3px;
   border-radius: inherit;
   padding: 2px;
-  background: conic-gradient(from 0deg,transparent 0 56%,#67e8ff 64%,#6ba7ff 70%,#9a75ff 77%,#e56cff 84%,transparent 92%);
+  background: conic-gradient(
+    from var(--sivolux-border-angle),
+    #67e8ff 0deg,
+    #39ff9a 42deg,
+    #5dffb3 78deg,
+    #6ba7ff 126deg,
+    #9a75ff 190deg,
+    #e56cff 252deg,
+    #7f8cff 312deg,
+    #67e8ff 360deg
+  );
   -webkit-mask: linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
   pointer-events: none;
   z-index: 2;
-  filter: drop-shadow(0 0 5px rgba(102,221,255,.75)) drop-shadow(0 0 8px rgba(189,92,255,.45));
+  filter:
+    drop-shadow(0 0 8px rgba(102,221,255,.98))
+    drop-shadow(0 0 14px rgba(57,255,154,.82))
+    drop-shadow(0 0 18px rgba(189,92,255,.78))
+    drop-shadow(0 0 24px rgba(93,255,179,.42));
   transform-origin: center;
   transition: opacity .18s ease;
 }
 .button:hover:not(.is-disabled)::before,.nav-cta:hover:not(.is-disabled)::before,.button:focus-visible:not(.is-disabled)::before,.nav-cta:focus-visible:not(.is-disabled)::before {
   opacity: 1;
-  animation: sivolux-border-orbit 1.75s linear infinite;
+  animation: sivolux-border-orbit 3s linear infinite;
 }
 .button:hover:not(.is-disabled),.nav-cta:hover:not(.is-disabled),.button:focus-visible:not(.is-disabled),.nav-cta:focus-visible:not(.is-disabled) {
   transform: translateY(-2px);
   border-color: transparent;
-  box-shadow: 0 0 18px rgba(87,211,255,.22),0 0 34px rgba(151,83,255,.13),inset 0 0 18px rgba(82,175,255,.07);
+  box-shadow:
+    0 0 24px rgba(87,211,255,.38),
+    0 0 34px rgba(57,255,154,.28),
+    0 0 46px rgba(151,83,255,.26),
+    0 0 58px rgba(189,92,255,.14),
+    inset 0 0 20px rgba(82,175,255,.10);
 }
+@property --sivolux-border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 @keyframes sivolux-border-orbit {
   to {
-    transform: rotate(360deg);
+    --sivolux-border-angle: 360deg;
   }
 }
 .menu-toggle {
@@ -1478,4 +1503,119 @@ details code {
   .back-to-top.footer-clear {
     bottom:100px;
   }
+}
+
+.button:not(.is-disabled)::before,
+.nav-cta:not(.is-disabled)::before {
+  filter:
+    drop-shadow(0 0 4px rgba(255,255,255,.22));
+}
+
+.button:not(.is-disabled)::after,
+.nav-cta:not(.is-disabled)::after {
+  content:"";
+  position:absolute;
+  inset:-3px;
+  border-radius:inherit;
+  padding:2px;
+  pointer-events:none;
+  z-index:-1;
+  opacity:0;
+
+  background:conic-gradient(
+    from var(--sivolux-border-angle),
+    #67e8ff 0deg,
+    #39ff9a 42deg,
+    #5dffb3 78deg,
+    #6ba7ff 126deg,
+    #9a75ff 190deg,
+    #e56cff 252deg,
+    #7f8cff 312deg,
+    #67e8ff 360deg
+  );
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+
+  filter:blur(9px);
+  transition:opacity .18s ease;
+}
+
+.button:hover:not(.is-disabled)::after,
+.nav-cta:hover:not(.is-disabled)::after,
+.button:focus-visible:not(.is-disabled)::after,
+.nav-cta:focus-visible:not(.is-disabled)::after {
+  opacity:.84;
+  animation:sivolux-border-orbit 3s linear infinite;
+}
+
+.button:hover:not(.is-disabled),
+.nav-cta:hover:not(.is-disabled),
+.button:focus-visible:not(.is-disabled),
+.nav-cta:focus-visible:not(.is-disabled) {
+  box-shadow:
+    0 0 14px rgba(87,211,255,.12),
+    inset 0 0 16px rgba(82,175,255,.07);
+}
+
+.button:not(.is-disabled)::after,
+.nav-cta:not(.is-disabled)::after {
+  content:"";
+  position:absolute;
+  inset:-7px;
+  border-radius:inherit;
+  pointer-events:none;
+  z-index:-1;
+  opacity:0;
+
+  background:conic-gradient(
+    from var(--sivolux-border-angle),
+    #67e8ff 0deg,
+    #39ff9a 42deg,
+    #5dffb3 78deg,
+    #6ba7ff 126deg,
+    #9a75ff 190deg,
+    #e56cff 252deg,
+    #7f8cff 312deg,
+    #67e8ff 360deg
+  );
+
+  filter:blur(12px);
+  transition:opacity .18s ease;
+}
+
+.button:hover:not(.is-disabled)::after,
+.nav-cta:hover:not(.is-disabled)::after,
+.button:focus-visible:not(.is-disabled)::after,
+.nav-cta:focus-visible:not(.is-disabled)::after {
+  opacity:.72;
+  animation:sivolux-border-orbit 3s linear infinite;
+}
+
+/* Button glow */
+.button:not(.is-disabled)::after,
+.nav-cta:not(.is-disabled)::after {
+  display:none !important;
+}
+
+.button:not(.is-disabled)::before,
+.nav-cta:not(.is-disabled)::before {
+  filter:
+    drop-shadow(0 0 6px rgba(102,221,255,.82))
+    drop-shadow(0 0 9px rgba(57,255,154,.58))
+    drop-shadow(0 0 11px rgba(189,92,255,.62));
+}
+
+.button:hover:not(.is-disabled),
+.nav-cta:hover:not(.is-disabled),
+.button:focus-visible:not(.is-disabled),
+.nav-cta:focus-visible:not(.is-disabled) {
+  box-shadow:
+    0 0 18px rgba(87,211,255,.24),
+    0 0 24px rgba(57,255,154,.15),
+    0 0 30px rgba(151,83,255,.18),
+    inset 0 0 18px rgba(82,175,255,.08);
 }
