@@ -1,8 +1,8 @@
-window.SIVOLUX_CONFIG = Object.freeze({
-  network: "NETWORK",
-  contract: "CONTRACT ADDRESS",
+window.SIVOLUX_CONFIG = {
+  network: "TEST NETWORK",
+  contract: "TEST-CONTRACT-1234567890",
   ticker: "$SIVOLUX",
   status: "LIVE",
-  buyUrl: "",
-  chartUrl: ""
-});
+  buyUrl: "https://example.com/",
+  chartUrl: "https://example.com/"
+};
