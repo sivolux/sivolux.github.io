@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-hidden="true">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#50eaff"/><stop offset=".5" stop-color="#708dff"/><stop offset="1" stop-color="#d45cff"/></linearGradient><radialGradient id="bg"><stop stop-color="#152451"/><stop offset="1" stop-color="#070a19"/></radialGradient><filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<circle cx="60" cy="60" r="49" fill="url(#bg)" stroke="url(#g)" stroke-width="2"/><circle cx="60" cy="60" r="42" fill="none" stroke="#6fe9ff" stroke-opacity=".18"/>
+<g fill="none" stroke="url(#g)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+<path d="M57 33c-8-6-19-2-22 7-7 1-12 8-10 15-5 6-3 16 4 20-1 9 7 16 16 14 4 5 12 5 15 0V42c0-4-1-7-3-9Z"/>
+<path d="M63 33c8-6 19-2 22 7 7 1 12 8 10 15 5 6 3 16-4 20 1 9-7 16-16 14-4 5-12 5-15 0V42c0-4 1-7 3-9Z"/>
+<path d="M43 48c7-1 12 3 13 9M35 63c8-1 14 3 18 9M45 81c4-5 9-7 15-7M77 48c-7-1-12 3-13 9M85 63c-8-1-14 3-18 9M75 81c-4-5-9-7-15-7"/>
+<circle cx="43" cy="48" r="2.2" fill="#58ecff" stroke="none"/><circle cx="35" cy="63" r="2.2" fill="#7390ff" stroke="none"/><circle cx="45" cy="81" r="2.2" fill="#a36fff" stroke="none"/><circle cx="77" cy="48" r="2.2" fill="#d45cff" stroke="none"/><circle cx="85" cy="63" r="2.2" fill="#9d72ff" stroke="none"/><circle cx="75" cy="81" r="2.2" fill="#63e7ff" stroke="none"/>
+</g></svg>
